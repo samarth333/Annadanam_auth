@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include,re_path
 from users import views
 
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('home/', include('users.urls')),
     path('', views.home, name = "home"),
     path("signup/", views.SignUp.as_view(), name="signup"),
+    re_path(r"^announcements/", include("pinax.announcements.urls", namespace="pinax_announcements")),
 
 ]
