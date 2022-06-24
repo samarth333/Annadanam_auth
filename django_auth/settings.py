@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'pinax.announcements',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import django_heroku
 django_heroku.settings(locals())
-AUTHENTICATION_BACKENDS = [
-    # other backends
-    "pinax.announcements.auth_backends.AnnouncementPermissionsBackend",
+#AUTHENTICATION_BACKENDS = [
+#    # other backends
+#    "pinax.announcements.auth_backends.AnnouncementPermissionsBackend",
+#    'django.contrib.auth.backends.ModelBackend',
+    
+CSRF_TRUSTED_ORIGINS = [
+    'https://annadanam.herokuapp.com'
 ]
-
