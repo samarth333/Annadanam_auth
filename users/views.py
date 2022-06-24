@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from .models import Members
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
-import HttpResponseRedirect
-import reverse
+from django.urls import reverse
 # Create your views here.
  
 def home(request):
